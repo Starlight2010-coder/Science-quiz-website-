@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Science CBT Quiz</title>
+  <link rel="stylesheet" href="Fortune.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Register Page -->
+    <div id="register">
+      <h1>Register</h1>
+      <input type="text" id="regName" placeholder="Enter your name">
+      <input type="password" id="regPass" placeholder="Enter password">
+      <button onclick="registerUser()">Register</button>
+      <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+    </div>
+
+    <!-- Login Page -->
+    <div id="login" class="hidden">
+      <h1>Login</h1>
+      <input type="text" id="loginName" placeholder="Enter your name">
+      <input type="password" id="loginPass" placeholder="Enter password">
+      <button onclick="loginUser()">Login</button>
+      <p>New user? <a href="#" onclick="showRegister()">Register</a></p>
+    </div>
+
+    <!-- Home Section -->
+    <div id="home" class="hidden">
+      <h1>Welcome, <span id="displayName"></span></h1>
+      <p>You have <b>20 questions</b> to answer in <b>3 minutes</b>.</p>
+      <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <!-- Quiz Section -->
+    <div id="quiz" class="hidden">
+      <div class="top-bar">
+        <span id="timer">03:00</span>
+        <span id="progress">Question 1 of 20</span>
+      </div>
+      <div id="questionBox"></div>
+      <div class="navigation">
+        <button onclick="prevQuestion()">Previous</button>
+        <button onclick="nextQuestion()">Next</button>
+        <button onclick="submitQuiz()">Submit</button>
+      </div>
+    </div>
+
+    <!-- Result Section -->
+    <div id="result" class="hidden">
+      <h2>Quiz Completed 🎉</h2>
+      <p id="scoreText"></p>
+      <div id="subjectBreakdown"></div>
+      <button onclick="location.reload()">Try Again</button>
+    </div>
+    <!-- Leaderboard Section -->
+    <div id="leaderboard" class="hidden">
+      <h2>🏆 Leaderboard</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody id="leaderboardBody"></tbody>
+      </table>
+      <button onclick="location.reload()">Back to Home</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
